@@ -11,7 +11,13 @@ class  Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
-    print(user);
-    return Authenticate();
+
+    // ignore: unnecessary_null_comparison
+    if(user == null){
+      print('user ID: '+user.uid);
+      return Authenticate();
+    }else{
+      return home();
+    }
   }
 }

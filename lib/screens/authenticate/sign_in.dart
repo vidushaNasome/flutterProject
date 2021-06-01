@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:newproject/screens/home/home.dart';
 import 'package:newproject/services/auth.dart';
 
 class SignIn extends StatefulWidget {
@@ -14,9 +15,9 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
+      backgroundColor: Colors.blueAccent,
       appBar: AppBar(
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.grey,
         title: Text('Sign In to Brew Crew'),
       ),
       body: Container(
@@ -29,6 +30,8 @@ class _SignInState extends State<SignIn> {
               print('no');
             }else{
               print(result.uid);
+              //return home();
+
             }
             },
         )
