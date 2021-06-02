@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "932957951775",
-    "project_id": "vehicle-d6414",
-    "storage_bucket": "vehicle-d6414.appspot.com"
+    "project_number": "320508720634",
+    "project_id": "toyota-vehicle-68647",
+    "storage_bucket": "toyota-vehicle-68647.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:932957951775:android:8cef6f3d1ea13652cc822a",
+        "mobilesdk_app_id": "1:320508720634:android:17dc42bd9b4304a0456043",
         "android_client_info": {
           "package_name": "com.example.newproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "932957951775-335ondguo16hg3b18arinntloddp6ivu.apps.googleusercontent.com",
+          "client_id": "320508720634-eknkjtkjfccldfqves7figh6hqpvi20e.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDAGQtrgorxC-zyFT9l5b1hJIV2GyfrgSA"
+          "current_key": "AIzaSyBNTEsAfI7UVBZkQt0SfgJNUqxF7T5SP2E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "932957951775-335ondguo16hg3b18arinntloddp6ivu.apps.googleusercontent.com",
+              "client_id": "320508720634-eknkjtkjfccldfqves7figh6hqpvi20e.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
