@@ -1,4 +1,8 @@
+import 'dart:core';
+import 'dart:core';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:newproject/models/vehicle.dart';
 
 class DatabaseService{
   //collection reference
@@ -16,4 +20,23 @@ class DatabaseService{
     }
     );
   }
+
+  List<Vehical> _vlistfromsnapshot(QuerySnapshot snapshot){
+    return snapshot.documents.map((doc){
+      return Vehical(
+        color:doc['color'] ?? '',
+        type:doc['type'] ?? '',
+        price:doc['price'] ?? '',
+      );
+    }).toList();
+  }
+
+
+  Stream<List<Vehical>> get vehicles{
+    return vCollection.snapshots()
+      .map(_vlistfromsnapshot);
+
+  }
+
+
 }
