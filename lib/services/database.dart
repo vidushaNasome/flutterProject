@@ -7,7 +7,7 @@ import 'package:newproject/models/vehicle.dart';
 class DatabaseService{
   //collection reference
 
-  final   CollectionReference vCollection = Firestore.instance.collection('vehicals');
+  final   CollectionReference vCollection = Firestore.instance.collection('allvehicals');
 
   final String uid;
   DatabaseService({required this.uid});
