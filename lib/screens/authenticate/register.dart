@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newproject/services/auth.dart';
+import 'package:newproject/shared/constants.dart';
+import 'package:newproject/shared/loadding.dart';
 
 class Register extends StatefulWidget {
   //const Register({Key key}) : super(key: key);
@@ -14,6 +16,7 @@ class _RegisterState extends State<Register> {
 
   final AuthServices _auth= AuthServices();
   final _formkey = GlobalKey<FormState>();
+  bool loading = false;
 
   String email='';
   String password="";
@@ -21,7 +24,7 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() :Scaffold(
       backgroundColor: Colors.blueAccent[50],
       appBar: AppBar(
         backgroundColor: Colors.grey,
@@ -45,6 +48,7 @@ class _RegisterState extends State<Register> {
               children: <Widget>[
                 SizedBox(height:20.0),
                 TextFormField(
+                  decoration: textInputDecoration.copyWith(hintText: 'Email'),
                   validator: (val)=>val!.isEmpty?'Enter an Email':null,
                   onChanged: (val){
                     setState(() => email = val );
@@ -53,6 +57,7 @@ class _RegisterState extends State<Register> {
                 SizedBox(height: 20.0),
                 TextFormField(
                   obscureText: true,
+                  decoration: textInputDecoration.copyWith(hintText: 'Password'),
                   validator: (val)=>val!.length <6 ?'Enter Password 6+ chars long ':null,
                   onChanged: (val){
                     setState(() => password = val );
@@ -71,9 +76,16 @@ class _RegisterState extends State<Register> {
                     if(_formkey.currentState!.validate()){
                       //print(email);
                       //print(password);
+                      setState(() {
+                        loading=true;
+                      });
                       dynamic result = await _auth.registerwithemailwithpassword(email, password);
                       if(result ==null){
-                        setState(() =>error = 'Error');
+                        //setState(() =>error = 'Error');
+                        setState(() {
+                          loading=false;
+                          error = 'Could not Sign In with these credentials.';
+                        });
                       }else{
 
                       }

@@ -9,7 +9,7 @@ class  home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink,
+      backgroundColor: Colors.grey,
       appBar: AppBar(
         title: Text('Toyota'),
         elevation: 0.0,
