@@ -11,7 +11,7 @@ class  home extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.pink,
       appBar: AppBar(
-        title: Text('Brew Crew'),
+        title: Text('Toyota'),
         elevation: 0.0,
         actions: <Widget>[
           FlatButton.icon(
