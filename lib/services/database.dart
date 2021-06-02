@@ -27,6 +27,7 @@ class DatabaseService{
         color:doc['color'] ?? '',
         type:doc['type'] ?? '',
         price:doc['price'] ?? '',
+        id: doc['id']??'',
       );
     }).toList();
   }

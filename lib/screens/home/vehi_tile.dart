@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newproject/models/vehicle.dart';
+import 'package:newproject/shared/vehicle_btn.dart';
 
 class VehicleTile extends StatelessWidget {
   //const VehicleTile({Key key}) : super(key: key);
@@ -16,10 +17,10 @@ class VehicleTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundColor: Colors.amber,
+            backgroundImage: NetworkImage('https://miro.medium.com/max/10944/1*s0KYlRAGxVeZ86M5A1ZqxQ.jpeg'),
           ),
           title: Text(vehi.color),
-          subtitle: Text(vehi.price),
+          subtitle: vehicle_button(id: vehi.id),
         )
       )
     );
