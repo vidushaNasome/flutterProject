@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:newproject/models/user.dart';
 import 'package:newproject/services/database.dart';
+
+import 'dart:math';
+Random random = new Random();
 
 class AuthServices{
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -54,6 +58,27 @@ class AuthServices{
       FirebaseUser user = result.user;
       return _userfromFirebaseUser(user);
     }catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
+
+  Future addVehicle(String type, String color, String url, String price) async {
+
+
+    int randomNumber = random.nextInt(100);
+    String id = randomNumber.toString();
+
+    try{
+      Firestore.instance.collection('allvehicals').document().setData({
+          'ID' : id,
+          'type': type,
+          'color':color,
+          'price':price
+        });
+
+      return 9;
+      } catch(e){
       print(e.toString());
       return null;
     }

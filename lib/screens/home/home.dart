@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:newproject/models/vehicle.dart';
+import 'package:newproject/screens/home/manage_form.dart';
 import 'package:newproject/screens/home/setting_form.dart';
 import 'package:newproject/screens/home/vehicle_list.dart';
 import 'package:newproject/services/auth.dart';
@@ -20,8 +21,9 @@ class  home extends StatelessWidget {
           context: context,
           builder:(context){
             return Container(
-              padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 60.0),
-              child: SettingsForm(),
+              padding: EdgeInsets.symmetric(vertical: 80.0,horizontal: 60.0),
+              child: ManageForm(),
+              height: 1200.0,
             );
           } ,
       );
@@ -45,7 +47,7 @@ class  home extends StatelessWidget {
           FlatButton.icon(
               onPressed: ()=>_showSettingpanel(),
               icon: Icon(Icons.settings),
-            label: Text('Settings'),
+            label: Text('Dashboard'),
           ),
 
         ],
