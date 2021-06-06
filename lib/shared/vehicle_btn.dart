@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:newproject/models/vehicle.dart';
 import 'package:newproject/screens/home/ViewOneVehicle.dart';
 
 class vehicle_button extends StatelessWidget {
 
 
-  final String id;
+  //final String id;
+  final Vehical vehi;
 
 
-  vehicle_button({required this.id});
+  vehicle_button({required this.vehi});
 
   //String? get id => null;
   //final String id;
@@ -23,7 +25,7 @@ class vehicle_button extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ViewOneVehicle(id: this.id)),
+              MaterialPageRoute(builder: (context) => VehicleDetails(vehi: vehi,)),
             );
           },
           child :Text('View More') ,

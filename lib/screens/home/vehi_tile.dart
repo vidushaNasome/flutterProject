@@ -20,7 +20,7 @@ class VehicleTile extends StatelessWidget {
             backgroundImage: NetworkImage('https://miro.medium.com/max/10944/1*s0KYlRAGxVeZ86M5A1ZqxQ.jpeg'),
           ),
           title: Text(vehi.color),
-          subtitle: vehicle_button(id: vehi.id),
+          subtitle: vehicle_button(vehi: vehi,),
         )
       )
     );

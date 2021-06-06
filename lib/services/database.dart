@@ -39,5 +39,14 @@ class DatabaseService{
 
   }
 
+  //delete
+  void delData() async{
+    await vCollection.getDocuments().then((data){
+      data.documents.forEach((element) {
+    vCollection.document(element.documentID).delete();
+      });
+    });
+  }
+
 
 }
