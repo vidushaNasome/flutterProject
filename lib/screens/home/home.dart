@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newproject/models/vehicle.dart';
 import 'package:newproject/screens/home/manage_form.dart';
@@ -17,8 +18,9 @@ class  home extends StatelessWidget {
   Widget build(BuildContext context) {
 
     void _showSettingpanel(){
-      showModalBottomSheet(
+      showCupertinoModalPopup(
           context: context,
+          barrierColor: Colors.blueGrey,
           builder:(context){
             return Container(
               padding: EdgeInsets.symmetric(vertical: 80.0,horizontal: 60.0),
@@ -28,6 +30,13 @@ class  home extends StatelessWidget {
           } ,
       );
     }
+    /*void _showSettingpanel(){
+      Container(
+        padding: EdgeInsets.symmetric(vertical: 80.0,horizontal: 60.0),
+        child: ManageForm(),
+
+      );
+    }*/
     return StreamProvider<List<Vehical>>.value(
       value: DatabaseService(uid: '').vehicles,
       child: Scaffold(
