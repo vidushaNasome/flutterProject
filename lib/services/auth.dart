@@ -84,4 +84,25 @@ class AuthServices{
       return null;
     }
   }
+
+  Future addFeedback(String email, String date, String feedback) async {
+
+
+    /*int randomNumber = random.nextInt(100);
+    String id = randomNumber.toString();*/
+
+    try{
+      Firestore.instance.collection('feedbacks').document().setData({
+        'email' : email,
+        'feedback': feedback,
+        'date':date,
+
+      });
+
+      return 9;
+    } catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
 }
