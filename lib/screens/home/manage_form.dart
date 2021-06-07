@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newproject/screens/home/Addvehicles.dart';
+import 'package:newproject/screens/home/feedbacks.dart';
 import 'package:newproject/shared/constants.dart';
 class ManageForm extends StatefulWidget {
   //const SettingsForm({Key key}) : super(key: key);
@@ -27,6 +28,18 @@ class _ManageFormState extends State<ManageForm> {
       );
     }
 
+    void _showFeedbackspanel(){
+      showModalBottomSheet(
+        context: context,
+        builder:(context){
+          return Container(
+            padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 60.0),
+            child: Feedbacks(),
+          );
+        } ,
+      );
+    }
+
 
     return Form(
       key: _formkey,
@@ -37,7 +50,7 @@ class _ManageFormState extends State<ManageForm> {
           ),
           SizedBox(height: 20.0),
           RaisedButton(
-            onPressed: (){},
+            onPressed: ()=>_showFeedbackspanel(),
             child: Text('Add Complaints and Feedbacks'),
           ),
           RaisedButton(

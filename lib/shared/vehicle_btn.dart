@@ -19,9 +19,8 @@ class vehicle_button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.amber,
         child:RaisedButton(
-        color: Colors.grey,
+        color: Colors.black54,
           onPressed: () {
             Navigator.push(
               context,

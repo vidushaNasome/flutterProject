@@ -11,7 +11,7 @@ class VehicleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top:8.0),
+      padding: EdgeInsets.only(top:12.0),
       child: Card(
         margin: EdgeInsets.fromLTRB(40.0, 6.0, 40.0, 6.0),
         child: ListTile(
@@ -20,10 +20,10 @@ class VehicleTile extends StatelessWidget {
             backgroundImage: NetworkImage(vehi.url),
           ),
           title: Text(
-              vehi.type
-
+              vehi.type + vehi.price,
           ),
           subtitle: vehicle_button(vehi: vehi,),
+
         )
       )
     );
