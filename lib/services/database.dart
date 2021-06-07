@@ -28,6 +28,7 @@ class DatabaseService{
         type:doc['type'] ?? '',
         price:doc['price'] ?? '',
         id: doc['id']??'',
+        url: doc['url']??'',
       );
     }).toList();
   }

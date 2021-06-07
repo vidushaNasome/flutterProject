@@ -74,7 +74,8 @@ class AuthServices{
           'ID' : id,
           'type': type,
           'color':color,
-          'price':price
+          'price':price,
+          'url':url,
         });
 
       return 9;

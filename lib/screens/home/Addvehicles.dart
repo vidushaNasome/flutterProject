@@ -52,9 +52,9 @@ class _AddvehiclesState extends State<Addvehicles> {
           ),
           SizedBox(height: 20.0),
           TextFormField(
-            decoration: textInputDecoration.copyWith(hintText: 'Image'),
-            validator: (val)=>val!.isEmpty?'please enter a Vehicle Image':null,
-            onChanged: (val)=>setState(()=> _type=val),
+            decoration: textInputDecoration.copyWith(hintText: 'Url'),
+            validator: (val)=>val!.isEmpty?'please enter a Vehicle Image Url':null,
+            onChanged: (val)=>setState(()=> _url=val),
           ),
           SizedBox(height: 20.0),
           RaisedButton(

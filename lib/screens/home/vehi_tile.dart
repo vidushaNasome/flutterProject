@@ -13,13 +13,16 @@ class VehicleTile extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top:8.0),
       child: Card(
-        margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 6.0),
+        margin: EdgeInsets.fromLTRB(40.0, 6.0, 40.0, 6.0),
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundImage: NetworkImage('https://miro.medium.com/max/10944/1*s0KYlRAGxVeZ86M5A1ZqxQ.jpeg'),
+            backgroundImage: NetworkImage(vehi.url),
           ),
-          title: Text(vehi.color),
+          title: Text(
+              vehi.type
+
+          ),
           subtitle: vehicle_button(vehi: vehi,),
         )
       )
