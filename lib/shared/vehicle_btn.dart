@@ -6,10 +6,14 @@ class vehicle_button extends StatelessWidget {
 
 
   //final String id;
+  //final Vehical vehi;
+
+
+  //vehicle_button({required this.vehi});
+
   final Vehical vehi;
 
-
-  vehicle_button({required this.vehi});
+  vehicle_button({required this.vehi,});
 
   //String? get id => null;
   //final String id;
