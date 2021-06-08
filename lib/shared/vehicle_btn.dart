@@ -6,10 +6,14 @@ class vehicle_button extends StatelessWidget {
 
 
   //final String id;
+  //final Vehical vehi;
+
+
+  //vehicle_button({required this.vehi});
+
   final Vehical vehi;
 
-
-  vehicle_button({required this.vehi});
+  vehicle_button({required this.vehi,});
 
   //String? get id => null;
   //final String id;
@@ -19,18 +23,26 @@ class vehicle_button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.amber,
-        child:RaisedButton(
-        color: Colors.grey,
+        child: ButtonTheme(
+            minWidth: 20.0,
+            height: 30.0,
+            child:RaisedButton(
+        color: Colors.white54,
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => VehicleDetails(vehi: vehi,)),
             );
           },
-          child :Text('View More') ,
+          child :Text(
+            'View More',
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontWeight: FontWeight.bold,
+              fontSize: 15),
+          ) ,
 
-    ));
+    )),);
 
   }
 }

@@ -33,6 +33,7 @@ dependencies:
   provider: ^4.3.3
   flutter_spinkit: ^4.0.0
   line_icons:
+  intl: ^0.15.7
 
 dev_dependencies:
   flutter_test:

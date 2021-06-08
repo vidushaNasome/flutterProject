@@ -17,13 +17,6 @@ class _VehicleListState extends State<VehicleList> {
 
     final vecls = Provider.of<List<Vehical>>(context);
 
-
-    //print(vecls);
-
-    /*for(var doc in vecls.documents){
-      print(doc.data);
-    }*/
-
     vecls.forEach((Vehical) {
       print(Vehical.type);
       print(Vehical.price);

@@ -74,11 +74,69 @@ class AuthServices{
           'ID' : id,
           'type': type,
           'color':color,
-          'price':price
+          'price':price,
+          'url':url,
         });
 
       return 9;
       } catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
+
+  Future addFeedback(String email, String date, String feedback) async {
+
+
+    /*int randomNumber = random.nextInt(100);
+    String id = randomNumber.toString();*/
+
+    try{
+      Firestore.instance.collection('feedbacks').document().setData({
+        'email' : email,
+        'feedback': feedback,
+        'date':date,
+
+      });
+
+      return 9;
+    } catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
+
+  Future addReport(String img, String no, String auction, String auctionDate, String lotNo, String chassisID, String vendor, String model, String mileage, String enginecc, String year, String grade, String transmission, String startPrice, String finishPrice, String condition, String status,) async {
+
+
+    int randomNumber = random.nextInt(100);
+    String id = randomNumber.toString();
+
+    try{
+      Firestore.instance.collection('reports').document().setData({
+        'img' : img,
+        'no': no,
+        'auction':auction,
+        'auctionDate' : auctionDate,
+        'lotNo': lotNo,
+        'chassisID':chassisID,
+        'vendor' : vendor,
+        'model': model,
+        'mileage':mileage,
+        'enginecc' : enginecc,
+        'year': year,
+        'grade':grade,
+        'transmission' : transmission,
+        'startPrice': startPrice,
+        'finishPrice':finishPrice,
+        'condition' : condition,
+        'status': status,
+
+
+      });
+
+      return 9;
+    } catch(e){
       print(e.toString());
       return null;
     }

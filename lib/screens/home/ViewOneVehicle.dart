@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
+import 'package:newproject/screens/home/detailReport.dart';
 import 'package:newproject/shared/colors.dart';
 import 'package:newproject/models/vehicle.dart';
-import 'package:provider/provider.dart';
 
 class VehicleDetails extends StatelessWidget {
-  //const VehicleTile({Key key}) : super(key: key);
 
   final Vehical vehi;
   VehicleDetails({required this.vehi});
 
-  get floatingActionButton => null;
-
   @override
   Widget build(BuildContext context) {
+
+    //Get Full Report Button
+    void _reportbtn(){
+      showModalBottomSheet(
+        context: context,
+        builder:(context){
+          return Container(
+            padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 60.0),
+            child: DetailReport(),
+          );
+        } ,
+      );
+    }
+
     return Scaffold(
       body: getBody(),
     );
@@ -41,28 +51,23 @@ class VehicleDetails extends StatelessWidget {
               child: Hero(
                 tag: vehi.id,
                 child: Container(
-                  height: 400,
+                  height: 300,
                   decoration: BoxDecoration(
-                      image: DecorationImage(image: NetworkImage('https://miro.medium.com/max/10944/1*s0KYlRAGxVeZ86M5A1ZqxQ.jpeg'),fit: BoxFit.cover)
+                      image: DecorationImage(image: NetworkImage(vehi.url),fit: BoxFit.cover)
                   ),
                 ),
               ),
             ),
             SizedBox(height: 20,),
             Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
+              padding: const EdgeInsets.fromLTRB(0.0,110.0, 0.0,0.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Description :",style: TextStyle(
-                      fontSize: 16,
-                      height: 1.5
-                  ),),
                   SizedBox(width: 20,),
                   Flexible(
-                    child: Text(vehi.color,style: TextStyle(
-                        fontSize: 16,
-                        height: 1.5
+                    child: Text(vehi.type,style: TextStyle(
+                        fontSize: 20.0,fontWeight: FontWeight.bold
                     ),),
                   ),
                 ],
@@ -118,19 +123,18 @@ class VehicleDetails extends StatelessWidget {
           ],
               ),
             ),
-            SizedBox(height: 20),
-            FloatingActionButton(
-              heroTag: 'button2',
-              child: Icon(Icons.delete),
-              backgroundColor: Colors.red,
-              onPressed: delData,
-              foregroundColor: Colors.white,
-            ),
+             /*******************************************************************
+             SizedBox(height:40.0),
+              Padding(
+                  padding: const EdgeInsets.only(left: 20,right: 20),
+                child: RaisedButton(
+                 onPressed: ()=>_reportbtn(),
+                  child: Text('Get Full Report'),
+                ),
+                ),
+              ),*********************************************************************/
           ],
         ),),
     );
-  }
-
-  delData() {
   }
 }
