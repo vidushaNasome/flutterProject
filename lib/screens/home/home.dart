@@ -42,7 +42,7 @@ class  home extends StatelessWidget {
       child: Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
-        title: Text('Toyota'),
+        title: Text('Toyota '),
         elevation: 0.0,
         actions: <Widget>[
           FlatButton.icon(

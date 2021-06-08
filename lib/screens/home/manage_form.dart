@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:newproject/screens/home/Addvehicles.dart';
 import 'package:newproject/screens/home/feedbacks.dart';
@@ -59,6 +61,15 @@ class _ManageFormState extends State<ManageForm> {
         children: <Widget>[
           Text(
             'Dashboard',
+            style: TextStyle(
+              fontSize: 40,
+              foreground: Paint()
+                ..style = PaintingStyle.stroke
+                ..strokeWidth = 1
+                ..color = Colors.blue[700]!,
+                decoration: TextDecoration.none,
+                  )
+
           ),
           SizedBox(height: 20.0),
           RaisedButton(
