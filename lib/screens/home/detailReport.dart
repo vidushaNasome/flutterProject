@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newproject/models/report.dart';
 
+// ignore: must_be_immutable
 class DetailReport extends StatelessWidget {
 
   Report report='' as Report;

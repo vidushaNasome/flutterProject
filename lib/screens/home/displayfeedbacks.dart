@@ -19,18 +19,14 @@ class _DisplayfeedbacksState extends State<Displayfeedbacks> {
   Widget build(BuildContext context) {
 
     final fb = Provider.of<List<Feedbacksmodel>>(context);
-
-    //print(vecls);
-
-    /*for(var doc in vecls.documents){
-      print(doc.data);
-    }*/
+    print(fb);
 
     fb.forEach((Feedbacksmodel) {
       print(Feedbacksmodel.email);
       print(Feedbacksmodel.date);
       print(Feedbacksmodel.feedback);
     });
+
     return ListView.builder(
       itemCount: fb.length,
       itemBuilder: (context,index){

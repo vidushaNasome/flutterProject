@@ -37,6 +37,7 @@ class DatabaseService{
 
 
   Stream<List<Vehical>> get vehicles{
+    print('inside vehicles');
     return vCollection.snapshots()
       .map(_vlistfromsnapshot);
 
@@ -54,6 +55,7 @@ class DatabaseService{
 
 
   Stream<List<Feedbacksmodel>> get feedbacks{
+    print('inside feedbacks');
     return fCollection.snapshots()
         .map(_flistfromsnapshot);
 

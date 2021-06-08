@@ -1,0 +1,15 @@
+
+    final fb = Provider.of<List<Feedbacksmodel>>(context);
+    print(fb);
+
+    fb.forEach((Feedbacksmodel) {
+      print(Feedbacksmodel.email);
+      print(Feedbacksmodel.date);
+      print(Feedbacksmodel.feedback);
+    });
+    return ListView.builder(
+      itemCount: fb.length,
+      itemBuilder: (context,index){
+        return FeedbackTile(feed: fb[index]);
+      },
+    );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:newproject/screens/home/displayfeedbacks.dart';
+import 'package:newproject/screens/home/feedback_new.dart';
 import 'package:newproject/screens/home/home.dart';
+import 'package:newproject/screens/home/vehicle_list.dart';
 import 'package:newproject/services/auth.dart';
 import 'package:newproject/shared/constants.dart';
 class Feedbacks extends StatefulWidget {
@@ -32,11 +34,12 @@ class _FeedbacksState extends State<Feedbacks> {
         builder:(context){
           return Container(
             padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 60.0),
-            child: Displayfeedbacks(),
+            child: FeedbackNew(),
           );
         } ,
       );
     }
+
     return Form(
       key: _formkey,
       child: Column(
@@ -90,7 +93,7 @@ class _FeedbacksState extends State<Feedbacks> {
           ),
           RaisedButton(
             onPressed: ()=>_showFeedbackspanel(),
-            child: Text('View Feedbacks '),
+            child: Text('View Feedbacks'),
           ),
         ],
       ),
