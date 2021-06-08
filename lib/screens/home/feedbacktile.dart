@@ -18,12 +18,14 @@ class   FeedbackTile extends StatelessWidget {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 25.0,
-                backgroundImage: NetworkImage('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.optimonk.com%2F20-ways-e-commerce-websites-get-customer-feedback%2F&psig=AOvVaw0jveou4DZjGoNGIbTAosGv&ust=1623117685172000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjp2922hPECFQAAAAAdAAAAABAD'),
+                backgroundImage: AssetImage('assests/pic3.png'),
               ),
               title: Text(
-                feed.email + feed.date,
+                'User Email: '+feed.email +'\n'+'Date: ' +feed.date,
               ),
-              subtitle: Text(feed.feedback),
+              subtitle: Text(
+                  'Feedbacks and Complaint: '+feed.feedback
+              ),
 
             )
         )

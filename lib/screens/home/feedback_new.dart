@@ -27,14 +27,7 @@ class  FeedbackNew extends StatelessWidget {
             title: Text('Toyota '),
             elevation: 0.0,
             actions: <Widget>[
-              FlatButton.icon(
-                onPressed: () async{
-                  await _auth.signout();
-                },
-                icon: Icon(Icons.person),
-                label: Text('logout'),
 
-              ),
             ],
           ),
           body: Displayfeedbacks(),
