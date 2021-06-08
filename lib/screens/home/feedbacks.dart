@@ -88,10 +88,24 @@ class _FeedbacksState extends State<Feedbacks> {
             onChanged: (val)=>setState(()=> _date=val),
           ),*/
           SizedBox(height: 15.0),
+      ButtonTheme(
+        minWidth: 300.0,
+        height: 50.0,
+        child:
           RaisedButton(
             onPressed: () => _selectDate(context),
             child: Text('Selected date:'+_date),
+            color: Colors.blue,
+            textColor: Colors.black,
+            padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
+            splashColor: Colors.grey,
           ),
+      ),
+          SizedBox(height: 15.0),
+      ButtonTheme(
+        minWidth: 300.0,
+        height: 50.0,
+        child:
           RaisedButton(
             onPressed: () async
             {
@@ -113,13 +127,28 @@ class _FeedbacksState extends State<Feedbacks> {
               }
             },
             child: Text(
-                'SAVE'
+                'SAVE FEEDBACKS'
             ),
+            color: Colors.black12,
+            textColor: Colors.white,
+            padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
+            splashColor: Colors.grey,
           ),
+      ),
+          SizedBox(height: 15.0),
+      ButtonTheme(
+        minWidth: 300.0,
+        height: 50.0,
+        child:
           RaisedButton(
             onPressed: ()=>_showFeedbackspanel(),
             child: Text('View Feedbacks'),
-          ),
+            color: Colors.black54,
+            textColor: Colors.white,
+            padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
+            splashColor: Colors.grey,
+
+          ),),
         ],
       ),
 
