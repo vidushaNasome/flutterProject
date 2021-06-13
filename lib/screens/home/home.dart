@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newproject/models/vehicle.dart';
+import 'package:newproject/screens/home/main.dart';
 import 'package:newproject/screens/home/manage_form.dart';
 import 'package:newproject/screens/home/setting_form.dart';
 import 'package:newproject/screens/home/vehicle_list.dart';
@@ -61,6 +62,9 @@ class  home extends StatelessWidget {
 
         ],
       ),
+        drawer: Container(
+          child: Main(),
+        ),
         body: VehicleList(),
     )
     );
