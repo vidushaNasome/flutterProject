@@ -21,11 +21,23 @@ class   FeedbackTile extends StatelessWidget {
                 backgroundImage: AssetImage('assests/pic3.png'),
               ),
               title: Text(
-                'User Email: '+feed.email +'\n'+'Date: ' +feed.date,
+                feed.email +'\n' +feed.date+'\n',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 12.0,
+                  fontFamily: 'RaleWay',
+                ),
               ),
               subtitle: Text(
-                  'Feedbacks and Complaint: '+feed.feedback
+                  'Feedbacks and Complaint '+'\n'+feed.feedback,
+                style: TextStyle(
+                color: Colors.blueGrey,
+                fontSize: 15.0,
+                fontFamily: 'RaleWay',
               ),
+
+              ),
+
 
             )
         )
