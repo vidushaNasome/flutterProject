@@ -31,7 +31,7 @@ class Main extends StatelessWidget {
                   child: Text(
                     "All Moedern. All Electric.",
                     style: TextStyle(
-                        color: Colors.indigo,
+                        color: Colors.deepOrange,
                         fontSize: 20.0,
                       fontFamily: 'RaleWay',
                     ),
@@ -120,7 +120,12 @@ class Main extends StatelessWidget {
             height: 50.0,
             child:
             RaisedButton(
-              onPressed: ()=>FeedbackNew(),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FeedbackNew()),
+                );
+              },
               child: Text('SHOPPING TOOLS'),
               color: Colors.black,
               textColor: Colors.white70,

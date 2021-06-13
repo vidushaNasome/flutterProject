@@ -21,7 +21,7 @@ class  home extends StatelessWidget {
     void _showSettingpanel(){
       showCupertinoModalPopup(
           context: context,
-          barrierColor: Colors.blueGrey,
+          barrierColor: Colors.white,
           builder:(context){
             return Container(
               padding: EdgeInsets.symmetric(vertical: 80.0,horizontal: 60.0),
@@ -43,7 +43,7 @@ class  home extends StatelessWidget {
       child: Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
-        title: Text('Toyota - Home'),
+        title: Text('Toyota'),
         elevation: 0.0,
         actions: <Widget>[
           FlatButton.icon(
