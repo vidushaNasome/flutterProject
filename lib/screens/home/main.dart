@@ -120,7 +120,12 @@ class Main extends StatelessWidget {
             height: 50.0,
             child:
             RaisedButton(
-              onPressed: ()=>FeedbackNew(),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FeedbackNew()),
+                );
+              },
               child: Text('SHOPPING TOOLS'),
               color: Colors.black,
               textColor: Colors.white70,
