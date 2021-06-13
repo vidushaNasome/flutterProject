@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
       value: AuthServices().user,
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           home: Wrapper(),
       ),
     );
@@ -27,3 +28,4 @@ class MyApp extends StatelessWidget {
 }
 
 
+//flutter run --no-sound-null-safety
