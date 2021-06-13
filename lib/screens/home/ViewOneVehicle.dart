@@ -6,43 +6,54 @@ import 'package:newproject/models/vehicle.dart';
 class VehicleDetails extends StatelessWidget {
 
   final Vehical vehi;
+
   VehicleDetails({required this.vehi});
 
   @override
   Widget build(BuildContext context) {
 
     //Get Full Report Button
-    void _reportbtn(){
+    void _reportbtn() {
       showModalBottomSheet(
         context: context,
-        builder:(context){
+        builder: (context) {
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 60.0),
+            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
             child: DetailReport(),
           );
-        } ,
+        },
       );
     }
 
+
     return Scaffold(
+      appBar: AppBar(
+        title: Text(('Vehicle Details')),
+        elevation: 0.0,
+      ),
       body: getBody(),
     );
   }
-  Widget getBody(){
+
+  Widget getBody() {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(bottom: 60),
         child: ListView(
           children: <Widget>[
+            SizedBox(height: 20,),
             Padding(
-              padding: const EdgeInsets.only(left: 20,top: 20),
-              child: InkWell(
-                onTap: (){
-                  //Navigator.pop(context);
-                },
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Icon(Icons.arrow_back_ios)),
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(width: 20,),
+                  Flexible(
+                    child: Text(vehi.type, style: TextStyle(
+                        fontSize: 20.0, fontWeight: FontWeight.bold
+                    ),),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 10,),
@@ -53,21 +64,22 @@ class VehicleDetails extends StatelessWidget {
                 child: Container(
                   height: 300,
                   decoration: BoxDecoration(
-                      image: DecorationImage(image: NetworkImage(vehi.url),fit: BoxFit.cover)
+                      image: DecorationImage(
+                          image: NetworkImage(vehi.url), fit: BoxFit.cover)
                   ),
                 ),
               ),
             ),
             SizedBox(height: 20,),
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0,110.0, 0.0,0.0),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SizedBox(width: 20,),
                   Flexible(
-                    child: Text(vehi.type,style: TextStyle(
-                        fontSize: 20.0,fontWeight: FontWeight.bold
+                    child: Text('Vehicle Details', style: TextStyle(
+                        fontSize: 18.0, fontWeight: FontWeight.bold,fontStyle: FontStyle.italic
                     ),),
                   ),
                 ],
@@ -75,17 +87,21 @@ class VehicleDetails extends StatelessWidget {
             ),
             SizedBox(height: 20,),
             Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Code :",style: TextStyle(
+                  Icon(
+                    Icons.car_repair,
+                    size: 30.0,
+                  ),
+                  Text("Color :", style: TextStyle(
                       fontSize: 16,
                       height: 1.5
                   ),),
                   SizedBox(width: 20,),
                   Flexible(
-                    child: Text(vehi.color,style: TextStyle(
+                    child: Text(vehi.color, style: TextStyle(
                         fontSize: 16,
                         height: 1.5
                     ),),
@@ -95,44 +111,119 @@ class VehicleDetails extends StatelessWidget {
             ),
             SizedBox(height: 20,),
             Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Price :",style: TextStyle(
+                  Icon(
+                    Icons.car_repair,
+                    size: 30.0,
+                  ),
+                  Text("Price :", style: TextStyle(
                       fontSize: 16,
                       height: 1.5
                   ),),
                   SizedBox(width: 20,),
                   Flexible(
-                      child: Row(children: <Widget>[
-                        Text(vehi.price+" LKR",style: TextStyle(
-                            fontSize: 16,height: 1.5
-                        ),),
-                        SizedBox(width: 20,),
-                        Text(vehi.price+" LKR",style: TextStyle(
-                            fontSize: 20,height: 1.5,
-                            color: primary,
-                            fontWeight: FontWeight.w400,
-                            decoration: TextDecoration.lineThrough
-                        ),
-                        )
-                      ],
-                      )
+                    child: Text(vehi.price, style: TextStyle(
+                        fontSize: 16,
+                        height: 1.5
+                    ),),
                   ),
-          ],
+                ],
               ),
             ),
-             /*******************************************************************
-             SizedBox(height:40.0),
-              Padding(
-                  padding: const EdgeInsets.only(left: 20,right: 20),
-                child: RaisedButton(
-                 onPressed: ()=>_reportbtn(),
-                  child: Text('Get Full Report'),
-                ),
-                ),
-              ),*********************************************************************/
+            SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Icon(
+                    Icons.car_repair,
+                    size: 30.0,
+                  ),
+                  Text("Manufacture :", style: TextStyle(
+                      fontSize: 16,
+                      height: 1.5
+                  ),),
+                  SizedBox(width: 20,),
+                  Flexible(
+                    child: Text('Toyota', style: TextStyle(
+                        fontSize: 16,
+                        height: 1.5
+                    ),),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(
+                      Icons.car_repair,
+                      size: 30.0,
+                    ),
+                    Text("More Colors:", style: TextStyle(
+                        fontSize: 16,
+                        height: 1.5
+                    ),),
+                  ]),
+            ),
+            SizedBox(width: 20,),
+            GridView.count(
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              padding: const EdgeInsets.only(right: 10),
+              crossAxisCount: 2,
+              crossAxisSpacing: 4,
+              mainAxisSpacing: 4,
+              children: vehi.code
+                  .map(
+                    (ingredient) =>
+                    Card(
+                      child: Container(
+                        width: 10,
+                        height: 10,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: NetworkImage(
+                              ingredient), fit: BoxFit.cover),
+                        ),
+                      ),
+                    ),
+              )
+                  .toList(),
+            ),
+           SizedBox(height: 20,),
+           Padding(
+             padding: const EdgeInsets.only(left: 20, right: 20),
+             child: Container(
+               child: RaisedButton(
+                 onPressed: () {  },
+                 color: Colors.deepOrange,
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: <Widget>[
+                     Text(
+                       'Get Full Report',
+                       style: TextStyle(
+                         fontSize: 20,
+                         fontWeight: FontWeight.w700,
+                         color: Colors.white,
+                       ),
+                     ),
+                     Icon(
+                       Icons.arrow_forward,
+                       color: Colors.white,
+                     )
+                   ],
+                 ),
+               ),
+             ),
+           ),
           ],
         ),),
     );
