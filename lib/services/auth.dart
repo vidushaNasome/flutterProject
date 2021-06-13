@@ -106,8 +106,8 @@ class AuthServices{
     }
   }
 
+  // create/add new report
   Future addReport(String img, String no, String auction, String auctionDate, String lotNo, String chassisID, String vendor, String model, String mileage, String enginecc, String year, String grade, String transmission, String startPrice, String finishPrice, String condition, String status,) async {
-
 
     int randomNumber = random.nextInt(100);
     String id = randomNumber.toString();
@@ -132,13 +132,18 @@ class AuthServices{
         'condition' : condition,
         'status': status,
 
-
       });
 
       return 9;
+
     } catch(e){
       print(e.toString());
       return null;
     }
   }
+
+  //delete vehicle
+ /* Future<void> rejectJob(String id)async {
+
+  }*/
 }

@@ -1,30 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:newproject/screens/home/detailReport.dart';
-import 'package:newproject/shared/colors.dart';
 import 'package:newproject/models/vehicle.dart';
 
 class VehicleDetails extends StatelessWidget {
 
   final Vehical vehi;
+  //final Report report;
 
-  VehicleDetails({required this.vehi});
+  VehicleDetails({required this.vehi,});
 
   @override
   Widget build(BuildContext context) {
-
-    //Get Full Report Button
-    void _reportbtn() {
-      showModalBottomSheet(
-        context: context,
-        builder: (context) {
-          return Container(
-            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-            child: DetailReport(),
-          );
-        },
-      );
-    }
-
 
     return Scaffold(
       appBar: AppBar(
@@ -197,12 +182,12 @@ class VehicleDetails extends StatelessWidget {
               )
                   .toList(),
             ),
-           SizedBox(height: 20,),
+           SizedBox(height: 50,),
            Padding(
              padding: const EdgeInsets.only(left: 20, right: 20),
              child: Container(
                child: RaisedButton(
-                 onPressed: () {  },
+                 onPressed: (){},
                  color: Colors.deepOrange,
                  child: Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -210,13 +195,13 @@ class VehicleDetails extends StatelessWidget {
                      Text(
                        'Get Full Report',
                        style: TextStyle(
-                         fontSize: 20,
-                         fontWeight: FontWeight.w700,
+                         fontSize: 16,
+                         fontWeight: FontWeight.w100,
                          color: Colors.white,
                        ),
                      ),
                      Icon(
-                       Icons.arrow_forward,
+                       Icons.report,
                        color: Colors.white,
                      )
                    ],

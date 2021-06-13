@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:newproject/screens/home/printreports.dart';
 import 'package:newproject/services/auth.dart';
 import 'package:newproject/shared/textfield.dart';
+import 'package:flutter/cupertino.dart';
 
 class TrueReport extends StatefulWidget {
 
@@ -9,6 +11,18 @@ class TrueReport extends StatefulWidget {
 }
 
 class _TrueReportState extends State<TrueReport> {
+  void _printButton(){
+    showCupertinoModalPopup(
+      context: context,
+      barrierColor: Colors.blueGrey,
+      builder:(context){
+        return Container(
+          padding: EdgeInsets.symmetric(vertical: 0.0,horizontal: 0.0),
+          child: Print(),
+        );
+      } ,
+    );
+  }
 
   final _formkey = GlobalKey<FormState>();
   final List<String> startPrice =['0','1','2'];
@@ -177,6 +191,13 @@ class _TrueReportState extends State<TrueReport> {
                 'SAVE'
             ),
           ),
+              SizedBox(height: 20,),
+                RaisedButton(
+                    onPressed: ()=>_printButton(),
+                    padding: const EdgeInsets.all(4.0),
+                    color: Colors.green,
+                  child: Text('Print'),
+                )
         ],
       ),
           ),

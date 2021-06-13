@@ -3,6 +3,7 @@ import 'dart:core';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:newproject/models/feedbacksmodel.dart';
+import 'package:newproject/models/report.dart';
 import 'package:newproject/models/vehicle.dart';
 
 class DatabaseService{
@@ -10,6 +11,7 @@ class DatabaseService{
 
   final   CollectionReference vCollection = Firestore.instance.collection('allvehicals');
   final   CollectionReference fCollection = Firestore.instance.collection('feedbacks');
+  final   CollectionReference rCollection = Firestore.instance.collection('report');
 
   final String uid;
   DatabaseService({required this.uid});
@@ -62,14 +64,37 @@ class DatabaseService{
 
   }
 
-  //delete
-  void delData() async{
-    await vCollection.getDocuments().then((data){
-      data.documents.forEach((element) {
-    vCollection.document(element.documentID).delete();
-      });
-    });
+  //List of reports
+  List<Report> _rlistfromsnapshot(QuerySnapshot snapshot){
+    return snapshot.documents.map((doc){
+      return Report(
+        id: doc['id']??'',
+        img:doc['img'] ?? '',
+        no:doc['no'] ?? '',
+        auction:doc['auction'] ?? '',
+        auctionDate: doc['auctionDate']??'',
+        lotNo: doc['lotNo']??'',
+        chassisID: doc['chassisID']??'',
+        vendor:doc['vendor'] ?? '',
+        model:doc['model'] ?? '',
+        mileage:doc['mileage'] ?? '',
+        enginecc: doc['enginecc']??'',
+        year: doc['year']??'',
+        grade: doc['grade']??'',
+        transmission:doc['transmission'] ?? '',
+        startPrice:doc['startPrice'] ?? '',
+        finishPrice:doc['finishPrice'] ?? '',
+        condition: doc['condition']??'',
+        status: doc['status']??'',
+      );
+    }).toList();
   }
 
+  Stream<List<Report>> get treports{
+    print('inside report');
+    return rCollection.snapshots()
+        .map(_rlistfromsnapshot);
+
+  }
 
 }
