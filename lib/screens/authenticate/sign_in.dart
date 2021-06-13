@@ -48,54 +48,91 @@ class _SignInState extends State<SignIn> {
           key: _formkey,
           child: Column(
             children: <Widget>[
-              SizedBox(height:20.0),
+              SizedBox(height:40.0),
               TextFormField(
-                decoration: textInputDecoration.copyWith(hintText: 'Email'),
+                decoration: InputDecoration(
+                    labelText: 'Email',
+                    labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.redAccent
+                        )
+                    )
+                ),
                 validator: (val)=>val!.isEmpty?'Enter an Email':null,
                 onChanged: (val){
                   setState(() => email = val );
                 },
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 40.0),
               TextFormField(
                 obscureText: true,
-                decoration: textInputDecoration.copyWith(hintText: 'Password'),
+                decoration: InputDecoration(
+                    labelText: 'Passaword',
+                    labelStyle: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.redAccent
+                        )
+                    )
+                ),
                 validator: (val)=>val!.length <6 ?'Enter Password 6+ chars long ':null,
                 onChanged: (val){
                   setState(() => password = val );
                 },
               ),
-              RaisedButton(
-                color: Colors.black12,
-                child: Text(
-                  'Sign In',
-                  style: TextStyle(color: Colors.white)
+              SizedBox(height: 40.0),
+              Container(
+                  height:40.0,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(20.0),
+                    shadowColor: Colors.redAccent,
+                    color: Colors.red,
+                    elevation: 7.0,
+                    child: RaisedButton(
+                    color: Colors.black12,
+                    child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Monster')
 
-                ),
-                onPressed: () async
-                {
-                  try{
-                    if(_formkey.currentState!.validate()){
-                      setState(() {
-                        loading=true;
-                      });
-                      print('valid');
-                      //print(password);
-                      dynamic result = await _auth.signinwithemailwithpassword(email, password);
-                      if(result ==null){
-                        //setState(() =>error = 'Could not Sign In with these credentials.');
-                        setState(() {
-                          loading=false;
-                          error = 'Could not Sign In with these credentials.';
-                        });
-                      }else{
+                    ),
+                    onPressed: () async
+                    {
+                      try{
+                        if(_formkey.currentState!.validate()){
+                          setState(() {
+                            loading=true;
+                          });
+                          print('valid');
+                          //print(password);
+                          dynamic result = await _auth.signinwithemailwithpassword(email, password);
+                          if(result ==null){
+                            //setState(() =>error = 'Could not Sign In with these credentials.');
+                            setState(() {
+                              loading=false;
+                              error = 'Could not Sign In with these credentials.';
+                            });
+                          }else{
+
+                          }
+                        }}catch(e){
 
                       }
-                    }}catch(e){
+                    },
+                  )
 
-                  }
-                },
-              )
+                  )
+              ),
+
             ],
           ),
 

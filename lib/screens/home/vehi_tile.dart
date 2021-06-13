@@ -57,15 +57,16 @@ class VehicleTile extends StatelessWidget {
             ButtonBar(
               alignment: MainAxisAlignment.start,
               children: [
-                FlatButton(
-                  onPressed: () {
-                    // Perform some action
-                  },
-                  child: FlatButton.icon(
-                    onPressed: ()=>_showSettingpanel,
+                FlatButton.icon(
+                    onPressed: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FeedbackNew()),
+                    );
+                    },
                     icon: Icon(Icons.add_comment_outlined),
                     label: Text(''),
-                  ),
+
                 ),
                 FlatButton(
                   onPressed: () {
