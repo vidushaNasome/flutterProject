@@ -66,7 +66,7 @@ class _ManageFormState extends State<ManageForm> {
               foreground: Paint()
                 ..style = PaintingStyle.stroke
                 ..strokeWidth = 1
-                ..color = Colors.blue[700]!,
+                ..color = Colors.amber[600]!,
                 decoration: TextDecoration.none,
                   )
 
@@ -80,7 +80,7 @@ class _ManageFormState extends State<ManageForm> {
           RaisedButton(
             onPressed: ()=>_showSettingpanel(),
             child: Text('Add Vehicles and Details'),
-            color: Colors.blueGrey[900],
+            color: Colors.yellow[900],
             textColor: Colors.white,
             padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
             splashColor: Colors.grey,
@@ -94,7 +94,7 @@ class _ManageFormState extends State<ManageForm> {
           RaisedButton(
             onPressed: ()=>_showReportpanel(),
             child: Text('True Reports'),
-            color:  Colors.blueGrey[900],
+            color: Colors.yellow[900],
             textColor: Colors.white,
             padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
             splashColor: Colors.grey,
@@ -107,7 +107,7 @@ class _ManageFormState extends State<ManageForm> {
             RaisedButton(
               onPressed: ()=>_showFeedbackspanel(),
               child: Text('Add Complaints and Feedbacks'),
-              color: Colors.blueGrey[900],
+              color: Colors.yellow[900],
               textColor: Colors.white,
               padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
               splashColor: Colors.amber,

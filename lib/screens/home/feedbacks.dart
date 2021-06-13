@@ -35,7 +35,7 @@ class _FeedbacksState extends State<Feedbacks> {
     void _showFeedbackspanel(){
       showCupertinoModalPopup(
         context: context,
-        barrierColor: Colors.blueGrey,
+        barrierColor: Colors.white,
         builder:(context){
           return Container(
             padding: EdgeInsets.symmetric(vertical: 0.0,horizontal: 0.0),
@@ -95,7 +95,7 @@ class _FeedbacksState extends State<Feedbacks> {
           RaisedButton(
             onPressed: () => _selectDate(context),
             child: Text('Selected date:'+_date),
-            color: Colors.blue,
+            color: Colors.white,
             textColor: Colors.black,
             padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
             splashColor: Colors.grey,
@@ -127,9 +127,9 @@ class _FeedbacksState extends State<Feedbacks> {
               }
             },
             child: Text(
-                'SAVE FEEDBACKS'
+                'Save Feedbacks'
             ),
-            color: Colors.black12,
+            color: Colors.amberAccent,
             textColor: Colors.white,
             padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
             splashColor: Colors.grey,
@@ -143,7 +143,7 @@ class _FeedbacksState extends State<Feedbacks> {
           RaisedButton(
             onPressed: ()=>_showFeedbackspanel(),
             child: Text('View Feedbacks'),
-            color: Colors.black54,
+            color: Colors.yellow[900],
             textColor: Colors.white,
             padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
             splashColor: Colors.grey,

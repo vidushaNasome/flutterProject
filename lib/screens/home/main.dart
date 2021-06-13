@@ -31,7 +31,7 @@ class Main extends StatelessWidget {
                   child: Text(
                     "All Moedern. All Electric.",
                     style: TextStyle(
-                        color: Colors.indigo,
+                        color: Colors.deepOrange,
                         fontSize: 20.0,
                       fontFamily: 'RaleWay',
                     ),
