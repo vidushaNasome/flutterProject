@@ -64,7 +64,7 @@ class _ManageFormState extends State<ManageForm> {
             style: TextStyle(
               fontSize: 40,
               foreground: Paint()
-                ..style = PaintingStyle.stroke
+                ..style = PaintingStyle.fill
                 ..strokeWidth = 1
                 ..color = Colors.amber[600]!,
                 decoration: TextDecoration.none,

@@ -46,6 +46,20 @@ class _RegisterState extends State<Register> {
             key: _formkey,
             child: Column(
               children: <Widget>[
+                 Container(
+               child: Stack(
+                 children: <Widget>[
+                   Container(
+                     padding:EdgeInsets.fromLTRB(0.0,110.0, 0.0,0.0),
+                     child: Text(
+                       'Register',
+                       style: TextStyle(
+                         fontSize: 40.0,fontWeight: FontWeight.bold)
+                       ),
+                     ),
+                 ],
+               ),
+             ),
                 SizedBox(height:20.0),
                 TextFormField(
                   decoration: textInputDecoration.copyWith(hintText: 'Email'),
@@ -63,12 +77,23 @@ class _RegisterState extends State<Register> {
                     setState(() => password = val );
                   },
                 ),
-                RaisedButton(
-                  color: Colors.black12,
-                  child: Text(
+                SizedBox(height: 40.0),
+                 Container(
+                  height:50.0,
+                  width: 200.0,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(20.0),
+                    
+                    color: Colors.yellow[700],
+                    elevation: 7.0,
+                    child: RaisedButton(
+                       color: Colors.black12,
+                       child: Text(
                       'Register',
-                      style: TextStyle(color: Colors.white)
-
+                         style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Monster')
                   ),
                   onPressed: () async
                   {
@@ -94,6 +119,9 @@ class _RegisterState extends State<Register> {
                     }
                   },
                 ),
+                  ),
+                 ),
+
                 SizedBox(height: 12.0),
                 Text(
                   error,

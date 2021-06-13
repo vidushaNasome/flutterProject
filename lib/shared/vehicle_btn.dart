@@ -37,7 +37,7 @@ class vehicle_button extends StatelessWidget {
           child :Text(
             'View More',
             style: TextStyle(
-              color: Colors.grey[800],
+              color: Colors.deepOrange[400],
               fontWeight: FontWeight.bold,
               fontSize: 15),
           ) ,
