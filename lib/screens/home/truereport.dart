@@ -62,7 +62,7 @@ class _TrueReportState extends State<TrueReport> {
                 children: <Widget>[
               Text(
                 'True Report',
-                style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18.0),
           ),
               SizedBox(height: 20.0),
               TextFormField(

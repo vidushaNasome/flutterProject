@@ -14,6 +14,7 @@ class DeleteVehicle extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: Text(('Delete Vehicle')),
         elevation: 0.0,
@@ -97,7 +98,7 @@ class DeleteVehicle extends StatelessWidget {
                   ),),
                   SizedBox(width: 20,),
                   Flexible(
-                    child: Text(vehi.price, style: TextStyle(
+                    child: Text(vehi.price+'LKR', style: TextStyle(
                         fontSize: 16,
                         height: 1.5
                     ),),
@@ -139,7 +140,7 @@ class DeleteVehicle extends StatelessWidget {
                       Icons.car_repair,
                       size: 30.0,
                     ),
-                    Text("More Colors:", style: TextStyle(
+                    Text("More Colors", style: TextStyle(
                         fontSize: 16,
                         height: 1.5
                     ),),
