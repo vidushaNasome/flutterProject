@@ -5,7 +5,6 @@ import 'package:newproject/services/auth.dart';
 class DeleteVehicle extends StatelessWidget {
 
   final Vehical vehi;
-
   DeleteVehicle({required this.vehi,});
 
   final AuthServices _auth= AuthServices();
@@ -170,13 +169,44 @@ class DeleteVehicle extends StatelessWidget {
               )
                   .toList(),
             ),
-            SizedBox(
+            SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: RaisedButton(
+                onPressed: () async{
+                  try{
+                    print('deleted');
+                    //print(password);
+                    dynamic result = await _auth.deleteVehicle(_id);
+                    if(result ==null){
+                      //setState(() =>error = 'Could not Sign In with these credentials.');
+                      /* setState(() {
+                        error = 'Could not Sign In with these credentials.';
+                      });*/
+                    }else{
+
+                    }
+                  }catch(e){
+
+                  }
+                },
+                child: Text('Delete',style: TextStyle(
+                  color: Colors.white
+                ),),
+                color: Colors.red,
+                textColor: Colors.black54,
+                padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
+                splashColor: Colors.grey,
+              ),
+            )
+           /* SizedBox(
               height: 10,
             ),
+
             SizedBox(
-              width: 80,
               child: RaisedButton(
-                color: Colors.green,
+                color: Colors.red,
+                splashColor: Colors.grey,
                 onPressed: () async
                 {
                   try{
@@ -196,16 +226,16 @@ class DeleteVehicle extends StatelessWidget {
                   }
                 },
                 child: Padding(
-                  padding: const EdgeInsets.all(4.0),
+                  padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
                   child: Row(
                     children: [
-                      Icon(Icons.touch_app),
-                      Text('Visit'),
+                      Icon(Icons.delete_forever_outlined),
+                      Text('Delete'),
                     ],
                   ),
                 ),
               ),
-            ),
+            ),*/
           ],
         ),),
     );

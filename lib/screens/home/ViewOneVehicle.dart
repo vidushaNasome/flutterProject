@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newproject/models/vehicle.dart';
 import 'package:newproject/screens/home/DeleteVehicle.dart';
+import 'package:flutter/cupertino.dart';
 
 class VehicleDetails extends StatelessWidget {
 
@@ -11,17 +12,24 @@ class VehicleDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    /********** App Bar *********/
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
           title: Text(('Vehicle Details')),
           elevation: 0.0,
-        actions: <Widget>[
-          FlatButton.icon(
-            onPressed: ()=>DeleteVehicle(vehi: vehi),
-            icon: Icon(Icons.settings),
-            label: Text('Manage'),
-          ),
-      ]
+          actions: <Widget>[
+            FlatButton.icon(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DeleteVehicle(vehi: vehi,)),
+                );
+              },
+              icon: Icon(Icons.settings),
+              label: Text('Manage'),
+            ),
+          ]
       ),
       body: getBody(),
     );
@@ -85,7 +93,7 @@ class VehicleDetails extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     Icons.car_repair,
-                    size: 30.0,
+                    size: 20.0,
                   ),
                   Text("Color :", style: TextStyle(
                       fontSize: 16,
@@ -109,7 +117,7 @@ class VehicleDetails extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     Icons.car_repair,
-                    size: 30.0,
+                    size: 20.0,
                   ),
                   Text("Price :", style: TextStyle(
                       fontSize: 16,
@@ -117,7 +125,7 @@ class VehicleDetails extends StatelessWidget {
                   ),),
                   SizedBox(width: 20,),
                   Flexible(
-                    child: Text(vehi.price, style: TextStyle(
+                    child: Text(vehi.price+'LKR', style: TextStyle(
                         fontSize: 16,
                         height: 1.5
                     ),),
@@ -133,7 +141,7 @@ class VehicleDetails extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     Icons.car_repair,
-                    size: 30.0,
+                    size: 20.0,
                   ),
                   Text("Manufacture :", style: TextStyle(
                       fontSize: 16,
@@ -157,9 +165,9 @@ class VehicleDetails extends StatelessWidget {
                   children: <Widget>[
                     Icon(
                       Icons.car_repair,
-                      size: 30.0,
+                      size: 20.0,
                     ),
-                    Text("More Colors:", style: TextStyle(
+                    Text("More Colors", style: TextStyle(
                         fontSize: 16,
                         height: 1.5
                     ),),
@@ -189,28 +197,19 @@ class VehicleDetails extends StatelessWidget {
               )
                   .toList(),
             ),
-           SizedBox(height: 40,),
-           Padding(
-             padding: const EdgeInsets.only(left: 20, right: 20),
-             child: Container(
-               height:40.0,
-               child: Material(
-                 borderRadius: BorderRadius.circular(20.0),
-                 shadowColor: Colors.amberAccent,
-                 color: Colors.amber,
-                 elevation: 7.0,
-                 child: Center(
-                   child: Text(
-                     'Get Full Report',
-                     style: TextStyle(
-                         color: Colors.black87,
-                         fontFamily: 'Monster'
-                     ),
-                   ),
-                 ),
-               ),
-             ),
-           ),
+            /********** Get Full Report Button *********/
+            SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: RaisedButton(
+                onPressed: (){},
+                child: Text('Get Full Report'),
+                color: Colors.amber,
+                textColor: Colors.black54,
+                padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
+                splashColor: Colors.grey,
+              ),
+            )
           ],
         ),),
     );

@@ -328,24 +328,26 @@ class DetailReport extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10,
-            ),
-            SizedBox(
-                width: 80,
-              child: RaisedButton(
-                onPressed: ()=>{},
-                color: Colors.amber,
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Row(
-                    children: [
-                      Icon(Icons.touch_app),
-                      Text('Add'),
-                  ],
+            ButtonBar(
+              children: [
+                FlatButton(
+                  onPressed: () {
+                    // Perform some action
+                  },
+                  color: Colors.amber,
+                  child: ButtonTheme(
+                    minWidth: 20.0,
+                    height: 30.0,
+                    child: Text(
+                      'Add To Vehicle',
+                    style: TextStyle(
+                        color: Colors.deepOrange[400],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
+                  )
                 ),
-              ),
-            ),
-          ),
+                ),],
+            )
           ],
         ),
       ),

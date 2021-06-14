@@ -142,6 +142,34 @@ class AuthServices{
 
   //delete vehicle
   Future deleteVehicle(String id) async {
-    final collection=Firestore.instance.collection('allvehicals2').document().delete();
+    try {
+
+      Firestore.instance.collection('allvehicals2').document().delete();
+      /*CollectionReference vehicles = Firestore.instance.collection('allvehicals2');
+      Future<void> deleteVehicle() {
+        return vehicles
+            .document('id')
+            .delete()
+            .then((value) => print("User Deleted"))
+            .catchError((error) => print("Failed to delete user: $error"));
+      }*/
+
+      return 9;
+
+    }catch(e){
+      print(e.toString());
+      return null;
+    }
   }
+
+  /*CollectionReference vehicles = Firestore.instance.collection('allvehicals2');
+  Future deleteVehicle(String id) {
+    return vehicles
+        .document('id')
+        .delete()
+        .then((value) => print("User Deleted"))
+        .catchError((error) => print("Failed to delete user: $error"));
+  }*/
+
+
 }
