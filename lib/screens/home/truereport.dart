@@ -59,7 +59,7 @@ class _TrueReportState extends State<TrueReport> {
         child: SingleChildScrollView(
           child:Center(
             child: Column(
-        children: <Widget>[
+                children: <Widget>[
               Text(
                 'True Report',
                 style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),

@@ -63,19 +63,20 @@ class AuthServices{
     }
   }
 
-  Future addVehicle(String type, String color, String url, String price) async {
+  Future addVehicle(String type, String color, String url, String price,List code) async {
 
 
     int randomNumber = random.nextInt(100);
     String id = randomNumber.toString();
 
     try{
-      Firestore.instance.collection('allvehicals').document().setData({
+      Firestore.instance.collection('allvehicals2').document().setData({
           'ID' : id,
           'type': type,
           'color':color,
           'price':price,
           'url':url,
+          'code': code,
         });
 
       return 9;
@@ -108,9 +109,6 @@ class AuthServices{
 
   // create/add new report
   Future addReport(String img, String no, String auction, String auctionDate, String lotNo, String chassisID, String vendor, String model, String mileage, String enginecc, String year, String grade, String transmission, String startPrice, String finishPrice, String condition, String status,) async {
-
-    int randomNumber = random.nextInt(100);
-    String id = randomNumber.toString();
 
     try{
       Firestore.instance.collection('reports').document().setData({
