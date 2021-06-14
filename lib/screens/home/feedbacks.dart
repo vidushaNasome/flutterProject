@@ -63,6 +63,7 @@ class _FeedbacksState extends State<Feedbacks> {
 
     return Form(
       key: _formkey,
+      child: SingleChildScrollView(
       child: Column(
         children: <Widget>[
           Text(
@@ -151,6 +152,7 @@ class _FeedbacksState extends State<Feedbacks> {
           ),),
         ],
       ),
+    ),
 
     );
   }
