@@ -77,8 +77,7 @@ class _AddvehiclesState extends State<Addvehicles> {
             onPressed: () async
             {
               try{
-
-                  print('valid');
+                   print('valid');
                   //print(password);
                   dynamic result = await _auth.addVehicle(_type, _color, _url, _price,_code);
                   if(result ==null){
@@ -105,3 +104,4 @@ class _AddvehiclesState extends State<Addvehicles> {
     );
   }
 }
+// onChanged: (val)=>setState(()=> _type=val),

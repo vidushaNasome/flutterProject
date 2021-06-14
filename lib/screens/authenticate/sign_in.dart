@@ -48,7 +48,21 @@ class _SignInState extends State<SignIn> {
           key: _formkey,
           child: Column(
             children: <Widget>[
-              SizedBox(height:40.0),
+    Container(
+               child: Stack(
+                 children: <Widget>[
+                   Container(
+                     padding:EdgeInsets.fromLTRB(0.0,110.0, 0.0,0.0),
+                     child: Text(
+                       'Signin',
+                       style: TextStyle(
+                         fontSize: 40.0,fontWeight: FontWeight.bold)
+                       ),
+                     ),
+                 ],
+               ),
+             ),
+              SizedBox(height:20.0),
               TextFormField(
                 decoration: InputDecoration(
                     labelText: 'Email',
@@ -87,13 +101,28 @@ class _SignInState extends State<SignIn> {
                   setState(() => password = val );
                 },
               ),
+                Container(
+                     alignment: Alignment(1.0,0.0),
+                     padding:EdgeInsets.only(top:15.0,left:20.0),
+                     child:InkWell(
+                       child:Text('Fogot Password?',
+                       style: TextStyle(
+                         color: Colors.green[300],
+                         fontWeight: FontWeight.bold,
+                         fontFamily: 'Montserrat',
+                         decoration: TextDecoration.underline
+                         )
+                      ),
+                  ) ,
+               ) ,
               SizedBox(height: 40.0),
               Container(
-                  height:40.0,
+                  height:50.0,
+                  width: 200.0,
                   child: Material(
                     borderRadius: BorderRadius.circular(20.0),
-                    shadowColor: Colors.redAccent,
-                    color: Colors.red,
+                    shadowColor: Colors.grey,
+                    color: Colors.yellow[700],
                     elevation: 7.0,
                     child: RaisedButton(
                     color: Colors.black12,
