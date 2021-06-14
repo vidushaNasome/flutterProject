@@ -50,7 +50,7 @@ class VehicleDetails extends StatelessWidget {
                   SizedBox(width: 20,),
                   Flexible(
                     child: Text(vehi.type, style: TextStyle(
-                        fontSize: 20.0, fontWeight: FontWeight.bold
+                        fontSize: 18.0, fontWeight: FontWeight.bold
                     ),),
                   ),
                 ],
@@ -79,7 +79,7 @@ class VehicleDetails extends StatelessWidget {
                   SizedBox(width: 20,),
                   Flexible(
                     child: Text('Vehicle Details', style: TextStyle(
-                        fontSize: 18.0, fontWeight: FontWeight.bold,fontStyle: FontStyle.italic
+                        fontSize: 18.0, fontWeight: FontWeight.bold
                     ),),
                   ),
                 ],

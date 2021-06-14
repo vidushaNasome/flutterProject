@@ -176,7 +176,6 @@ class DeleteVehicle extends StatelessWidget {
                 onPressed: () async{
                   try{
                     print('deleted');
-                    //print(password);
                     dynamic result = await _auth.deleteVehicle(_id);
                     if(result ==null){
                       //setState(() =>error = 'Could not Sign In with these credentials.');
@@ -199,43 +198,6 @@ class DeleteVehicle extends StatelessWidget {
                 splashColor: Colors.grey,
               ),
             )
-           /* SizedBox(
-              height: 10,
-            ),
-
-            SizedBox(
-              child: RaisedButton(
-                color: Colors.red,
-                splashColor: Colors.grey,
-                onPressed: () async
-                {
-                  try{
-                    print('deleted');
-                    //print(password);
-                    dynamic result = await _auth.deleteVehicle(_id);
-                    if(result ==null){
-                      //setState(() =>error = 'Could not Sign In with these credentials.');
-                     /* setState(() {
-                        error = 'Could not Sign In with these credentials.';
-                      });*/
-                    }else{
-
-                    }
-                  }catch(e){
-
-                  }
-                },
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
-                  child: Row(
-                    children: [
-                      Icon(Icons.delete_forever_outlined),
-                      Text('Delete'),
-                    ],
-                  ),
-                ),
-              ),
-            ),*/
           ],
         ),),
     );
