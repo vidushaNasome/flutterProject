@@ -6,6 +6,6 @@ const CustomTextField=InputDecoration(
     fillColor: Colors.white,
     filled: true,
     focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.indigo,width: 2.0)
+        borderSide: BorderSide(color: Colors.amber,width: 2.0)
     )
 );

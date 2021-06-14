@@ -4,7 +4,6 @@ import 'package:newproject/models/vehicle.dart';
 class VehicleDetails extends StatelessWidget {
 
   final Vehical vehi;
-  //final Report report;
 
   VehicleDetails({required this.vehi,});
 
@@ -164,8 +163,8 @@ class VehicleDetails extends StatelessWidget {
               scrollDirection: Axis.vertical,
               padding: const EdgeInsets.only(right: 10),
               crossAxisCount: 2,
-              crossAxisSpacing: 4,
-              mainAxisSpacing: 4,
+              crossAxisSpacing: 2,
+              mainAxisSpacing: 2,
               children: vehi.code
                   .map(
                     (ingredient) =>
@@ -182,29 +181,24 @@ class VehicleDetails extends StatelessWidget {
               )
                   .toList(),
             ),
-           SizedBox(height: 50,),
+           SizedBox(height: 40,),
            Padding(
              padding: const EdgeInsets.only(left: 20, right: 20),
              child: Container(
-               child: RaisedButton(
-                 onPressed: (){},
-                 color: Colors.deepOrange,
-                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: <Widget>[
-                     Text(
-                       'Get Full Report',
-                       style: TextStyle(
-                         fontSize: 16,
-                         fontWeight: FontWeight.w100,
-                         color: Colors.white,
-                       ),
+               height:40.0,
+               child: Material(
+                 borderRadius: BorderRadius.circular(20.0),
+                 shadowColor: Colors.amberAccent,
+                 color: Colors.amber,
+                 elevation: 7.0,
+                 child: Center(
+                   child: Text(
+                     'Get Full Report',
+                     style: TextStyle(
+                         color: Colors.black87,
+                         fontFamily: 'Monster'
                      ),
-                     Icon(
-                       Icons.report,
-                       color: Colors.white,
-                     )
-                   ],
+                   ),
                  ),
                ),
              ),

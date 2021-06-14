@@ -1,7 +1,6 @@
 import 'package:newproject/models/report.dart';
 import 'package:newproject/screens/home/detailReport.dart';
 import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class AllReports extends StatefulWidget {
