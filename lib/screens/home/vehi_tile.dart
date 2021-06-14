@@ -76,7 +76,6 @@ class VehicleTile extends StatelessWidget {
                 ),
               ],
             ),
-            Image.asset('assets/pic1.jpg'),
           ],
         ),
       ),
