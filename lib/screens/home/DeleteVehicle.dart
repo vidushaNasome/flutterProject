@@ -1,27 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:newproject/models/vehicle.dart';
-import 'package:newproject/screens/home/DeleteVehicle.dart';
+import 'package:newproject/services/auth.dart';
 
-class VehicleDetails extends StatelessWidget {
+class DeleteVehicle extends StatelessWidget {
 
   final Vehical vehi;
 
-  VehicleDetails({required this.vehi,});
+  DeleteVehicle({required this.vehi,});
+
+  final AuthServices _auth= AuthServices();
+  String _id='';
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
-          title: Text(('Vehicle Details')),
-          elevation: 0.0,
-        actions: <Widget>[
-          FlatButton.icon(
-            onPressed: ()=>DeleteVehicle(vehi: vehi),
-            icon: Icon(Icons.settings),
-            label: Text('Manage'),
-          ),
-      ]
+        title: Text(('Delete Vehicle')),
+        elevation: 0.0,
       ),
       body: getBody(),
     );
@@ -60,21 +56,6 @@ class VehicleDetails extends StatelessWidget {
                           image: NetworkImage(vehi.url), fit: BoxFit.cover)
                   ),
                 ),
-              ),
-            ),
-            SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  SizedBox(width: 20,),
-                  Flexible(
-                    child: Text('Vehicle Details', style: TextStyle(
-                        fontSize: 18.0, fontWeight: FontWeight.bold,fontStyle: FontStyle.italic
-                    ),),
-                  ),
-                ],
               ),
             ),
             SizedBox(height: 20,),
@@ -189,28 +170,42 @@ class VehicleDetails extends StatelessWidget {
               )
                   .toList(),
             ),
-           SizedBox(height: 40,),
-           Padding(
-             padding: const EdgeInsets.only(left: 20, right: 20),
-             child: Container(
-               height:40.0,
-               child: Material(
-                 borderRadius: BorderRadius.circular(20.0),
-                 shadowColor: Colors.amberAccent,
-                 color: Colors.amber,
-                 elevation: 7.0,
-                 child: Center(
-                   child: Text(
-                     'Get Full Report',
-                     style: TextStyle(
-                         color: Colors.black87,
-                         fontFamily: 'Monster'
-                     ),
-                   ),
-                 ),
-               ),
-             ),
-           ),
+            SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              width: 80,
+              child: RaisedButton(
+                color: Colors.green,
+                onPressed: () async
+                {
+                  try{
+                    print('deleted');
+                    //print(password);
+                    dynamic result = await _auth.deleteVehicle(_id);
+                    if(result ==null){
+                      //setState(() =>error = 'Could not Sign In with these credentials.');
+                     /* setState(() {
+                        error = 'Could not Sign In with these credentials.';
+                      });*/
+                    }else{
+
+                    }
+                  }catch(e){
+
+                  }
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Row(
+                    children: [
+                      Icon(Icons.touch_app),
+                      Text('Visit'),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),),
     );

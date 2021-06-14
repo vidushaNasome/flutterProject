@@ -141,7 +141,7 @@ class AuthServices{
   }
 
   //delete vehicle
- /* Future<void> rejectJob(String id)async {
-
-  }*/
+  Future deleteVehicle(String id) async {
+    final collection=Firestore.instance.collection('allvehicals2').document().delete();
+  }
 }
