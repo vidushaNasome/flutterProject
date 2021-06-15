@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newproject/screens/authenticate/authenticate.dart';
+import 'package:newproject/screens/home/UpdateList.dart';
 import 'package:newproject/screens/home/home.dart';
 import 'package:newproject/screens/wrapper.dart';
 import 'package:newproject/services/auth.dart';
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
             )
             ),
           debugShowCheckedModeBanner: false,
+           routes:{
+        '/list': (_) => new UpdateList(),   
+      },
           home: Wrapper(),
       ),
     );

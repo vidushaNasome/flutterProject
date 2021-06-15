@@ -66,7 +66,7 @@ class _ManageFormState extends State<ManageForm> {
               foreground: Paint()
                 ..style = PaintingStyle.fill
                 ..strokeWidth = 1
-                ..color = Colors.amber[600]!,
+                ..color = Colors.black,
                 decoration: TextDecoration.none,
                   )
 
@@ -80,6 +80,23 @@ class _ManageFormState extends State<ManageForm> {
           RaisedButton(
             onPressed: ()=>_showSettingpanel(),
             child: Text('Add Vehicles and Details'),
+            color: Colors.yellow[900],
+            textColor: Colors.white,
+            padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
+            splashColor: Colors.grey,
+          ),
+      ),
+          SizedBox(height: 20.0),
+      ButtonTheme(
+        minWidth: 250.0,
+        height: 120.0,
+        child:
+          RaisedButton(
+            // onPressed: ()=>_showSettingpanel(),
+            onPressed: (){
+                     Navigator.of(context).pushNamed('/list');
+                   },
+            child: Text('Update Vehicle Details'),
             color: Colors.yellow[900],
             textColor: Colors.white,
             padding: EdgeInsets.fromLTRB(9, 9, 9, 9),

@@ -10,6 +10,18 @@ class Vehical{
 
   Vehical({required this.color,required this.price,required this.type,required this.id, required this.url,required this.code});
 
+  static Vehical fromMap(Map<String, dynamic> map){
+   return Vehical(
+     code: ['code'],
+      id: map['id'],
+      type: map['type'],
+      color: map['color'],
+      price: map['price'],
+      url: map['url'],
 
+   );
+  
+  }
+  
 
 }
