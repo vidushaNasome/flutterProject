@@ -1,35 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:newproject/models/vehicle.dart';
-import 'package:newproject/screens/home/DeleteVehicle.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:newproject/services/auth.dart';
 
-class VehicleDetails extends StatelessWidget {
+class DeleteVehicle extends StatelessWidget {
 
   final Vehical vehi;
+  DeleteVehicle({required this.vehi,});
 
-  VehicleDetails({required this.vehi,});
+  final AuthServices _auth= AuthServices();
+  String _id='';
 
   @override
   Widget build(BuildContext context) {
 
-    /********** App Bar *********/
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-          title: Text(('Vehicle Details')),
-          elevation: 0.0,
-          actions: <Widget>[
-            FlatButton.icon(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DeleteVehicle(vehi: vehi,)),
-                );
-              },
-              icon: Icon(Icons.settings),
-              label: Text('Manage'),
-            ),
-          ]
+        title: Text(('Delete Vehicle')),
+        elevation: 0.0,
       ),
       body: getBody(),
     );
@@ -50,7 +38,7 @@ class VehicleDetails extends StatelessWidget {
                   SizedBox(width: 20,),
                   Flexible(
                     child: Text(vehi.type, style: TextStyle(
-                        fontSize: 18.0, fontWeight: FontWeight.bold
+                        fontSize: 20.0, fontWeight: FontWeight.bold
                     ),),
                   ),
                 ],
@@ -76,24 +64,9 @@ class VehicleDetails extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  SizedBox(width: 20,),
-                  Flexible(
-                    child: Text('Vehicle Details', style: TextStyle(
-                        fontSize: 18.0, fontWeight: FontWeight.bold
-                    ),),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
                   Icon(
                     Icons.car_repair,
-                    size: 20.0,
+                    size: 30.0,
                   ),
                   Text("Color :", style: TextStyle(
                       fontSize: 16,
@@ -117,7 +90,7 @@ class VehicleDetails extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     Icons.car_repair,
-                    size: 20.0,
+                    size: 30.0,
                   ),
                   Text("Price :", style: TextStyle(
                       fontSize: 16,
@@ -141,7 +114,7 @@ class VehicleDetails extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     Icons.car_repair,
-                    size: 20.0,
+                    size: 30.0,
                   ),
                   Text("Manufacture :", style: TextStyle(
                       fontSize: 16,
@@ -165,7 +138,7 @@ class VehicleDetails extends StatelessWidget {
                   children: <Widget>[
                     Icon(
                       Icons.car_repair,
-                      size: 20.0,
+                      size: 30.0,
                     ),
                     Text("More Colors", style: TextStyle(
                         fontSize: 16,
@@ -197,14 +170,30 @@ class VehicleDetails extends StatelessWidget {
               )
                   .toList(),
             ),
-            /********** Get Full Report Button *********/
             SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: RaisedButton(
-                onPressed: (){},
-                child: Text('Get Full Report'),
-                color: Colors.amber,
+                onPressed: () async{
+                  try{
+                    print('deleted');
+                    dynamic result = await _auth.deleteVehicle(_id);
+                    if(result ==null){
+                      //setState(() =>error = 'Could not Sign In with these credentials.');
+                      /* setState(() {
+                        error = 'Could not Sign In with these credentials.';
+                      });*/
+                    }else{
+
+                    }
+                  }catch(e){
+
+                  }
+                },
+                child: Text('Delete',style: TextStyle(
+                  color: Colors.white
+                ),),
+                color: Colors.red,
                 textColor: Colors.black54,
                 padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
                 splashColor: Colors.grey,

@@ -63,19 +63,20 @@ class AuthServices{
     }
   }
 
-  Future addVehicle(String type, String color, String url, String price) async {
+  Future addVehicle(String type, String color, String url, String price,List code) async {
 
 
     int randomNumber = random.nextInt(100);
     String id = randomNumber.toString();
 
     try{
-      Firestore.instance.collection('allvehicals').document().setData({
+      Firestore.instance.collection('allvehicals2').document().setData({
           'ID' : id,
           'type': type,
           'color':color,
           'price':price,
           'url':url,
+          'code': code,
         });
 
       return 9;
@@ -109,9 +110,6 @@ class AuthServices{
   // create/add new report
   Future addReport(String img, String no, String auction, String auctionDate, String lotNo, String chassisID, String vendor, String model, String mileage, String enginecc, String year, String grade, String transmission, String startPrice, String finishPrice, String condition, String status,) async {
 
-    int randomNumber = random.nextInt(100);
-    String id = randomNumber.toString();
-
     try{
       Firestore.instance.collection('reports').document().setData({
         'img' : img,
@@ -143,7 +141,35 @@ class AuthServices{
   }
 
   //delete vehicle
- /* Future<void> rejectJob(String id)async {
+  Future deleteVehicle(String id) async {
+    try {
 
+      Firestore.instance.collection('allvehicals2').document().delete();
+      /*CollectionReference vehicles = Firestore.instance.collection('allvehicals2');
+      Future<void> deleteVehicle() {
+        return vehicles
+            .document('id')
+            .delete()
+            .then((value) => print("User Deleted"))
+            .catchError((error) => print("Failed to delete user: $error"));
+      }*/
+
+      return 9;
+
+    }catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
+
+  /*CollectionReference vehicles = Firestore.instance.collection('allvehicals2');
+  Future deleteVehicle(String id) {
+    return vehicles
+        .document('id')
+        .delete()
+        .then((value) => print("User Deleted"))
+        .catchError((error) => print("Failed to delete user: $error"));
   }*/
+
+
 }

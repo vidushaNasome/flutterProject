@@ -10,9 +10,9 @@ import 'package:newproject/models/vehicle.dart';
 class DatabaseService{
   //collection reference
 
-  final   CollectionReference vCollection = Firestore.instance.collection('allvehicals');
+  final   CollectionReference vCollection = Firestore.instance.collection('allvehicals2');
   final   CollectionReference fCollection = Firestore.instance.collection('feedbacks');
-  final   CollectionReference rCollection = Firestore.instance.collection('report');
+  final   CollectionReference rCollection = Firestore.instance.collection('reports');
 
   final String uid;
   DatabaseService({required this.uid});
@@ -69,7 +69,6 @@ class DatabaseService{
   List<Report> _rlistfromsnapshot(QuerySnapshot snapshot){
     return snapshot.documents.map((doc){
       return Report(
-        id: doc['id']??'',
         img:doc['img'] ?? '',
         no:doc['no'] ?? '',
         auction:doc['auction'] ?? '',

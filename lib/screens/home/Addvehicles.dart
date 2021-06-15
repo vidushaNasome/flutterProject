@@ -20,13 +20,17 @@ class _AddvehiclesState extends State<Addvehicles> {
   String _price='';
   String _type='';
   String _url='';
+  List _code=[];
   String error='';
 
   @override
   Widget build(BuildContext context) {
-    return Form(
+    return Scaffold(
       key: _formkey,
-      child: Column(
+      body: Center(
+        child: SingleChildScrollView(
+        child:Center(
+        child: Column(
         children: <Widget>[
           Text(
             'Add Vehicles',
@@ -57,13 +61,19 @@ class _AddvehiclesState extends State<Addvehicles> {
             onChanged: (val)=>setState(()=> _url=val),
           ),
           SizedBox(height: 20.0),
+          TextFormField(
+            decoration: textInputDecoration.copyWith(hintText: 'More Color'),
+            validator: (val)=>val!.isEmpty?'please enter a Vehicle Image Url':null,
+            onChanged: (val)=>setState(()=> _url=val),
+          ),
+          SizedBox(height: 20.0),
           RaisedButton(
             onPressed: () async
             {
               try{
                    print('valid');
                   //print(password);
-                  dynamic result = await _auth.addVehicle(_type, _color, _url, _price);
+                  dynamic result = await _auth.addVehicle(_type, _color, _url, _price,_code);
                   if(result ==null){
                     //setState(() =>error = 'Could not Sign In with these credentials.');
                     setState(() {
@@ -82,7 +92,9 @@ class _AddvehiclesState extends State<Addvehicles> {
           )
         ],
       ),
-
+    ),
+          ),
+      ),
     );
   }
 }

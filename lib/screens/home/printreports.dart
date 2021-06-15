@@ -9,7 +9,6 @@ import 'package:newproject/services/database.dart';
 import 'package:provider/provider.dart';
 
 class  Print extends StatelessWidget {
-  //const ({Key key}) : super(key: key);
 
   final AuthServices _auth= AuthServices();
 

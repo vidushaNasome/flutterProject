@@ -59,10 +59,10 @@ class _TrueReportState extends State<TrueReport> {
         child: SingleChildScrollView(
           child:Center(
             child: Column(
-        children: <Widget>[
+                children: <Widget>[
               Text(
                 'True Report',
-                style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18.0),
           ),
               SizedBox(height: 20.0),
               TextFormField(
@@ -166,8 +166,12 @@ class _TrueReportState extends State<TrueReport> {
                 validator: (val)=>val!.isEmpty?'please enter a Status':null,
                 onChanged: (val)=>setState(()=> _status=val),
           ),
-              SizedBox(height: 20.0),
-              RaisedButton(
+              SizedBox(height: 15.0),
+              ButtonTheme(
+                minWidth: 300.0,
+                height: 50.0,
+                child:
+                RaisedButton(
                 onPressed: () async
                 {
                   try{
@@ -190,16 +194,28 @@ class _TrueReportState extends State<TrueReport> {
                 child: Text(
                 'SAVE'
             ),
+                color: Colors.amberAccent,
+                textColor: Colors.white,
+                padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
+                splashColor: Colors.grey,
           ),
-              SizedBox(height: 20,),
-                RaisedButton(
-                    onPressed: ()=>_printButton(),
-                    padding: const EdgeInsets.all(4.0),
-                    color: Colors.green,
-                  child: Text('Print'),
-                )
-        ],
-      ),
+              ),
+                  SizedBox(height: 15.0),
+                  ButtonTheme(
+                    minWidth: 300.0,
+                    height: 50.0,
+                    child:
+                    RaisedButton(
+                      onPressed: ()=>_printButton(),
+                      child: Text('View'),
+                      color: Colors.yellow[900],
+                      textColor: Colors.white,
+                      padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
+                      splashColor: Colors.grey,
+
+                    ),),
+            ],
+        ),
           ),
           ),
       ),
