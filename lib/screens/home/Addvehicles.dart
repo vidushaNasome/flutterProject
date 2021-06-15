@@ -89,6 +89,10 @@ class _AddvehiclesState extends State<Addvehicles> {
             child: Text(
               'SAVE'
             ),
+             color: Colors.yellow[900],
+              textColor: Colors.white,
+              padding: EdgeInsets.fromLTRB(9, 9, 9, 9),
+              splashColor: Colors.amber,
           )
         ],
       ),

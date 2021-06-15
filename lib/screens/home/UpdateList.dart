@@ -59,10 +59,10 @@ class UpdateList extends StatefulWidget{
                     child: Container(
                         height: MediaQuery.of(context).size.height - 300.0,
                         child: ListView(children: [
-                          _bildName('Toyota Care', 'Roadside Assistent', 'Find out more'),
-                           _bildName('Military Revbate', 'New Offer', 'Find out more'),
-                            _bildName('Colege Grad Rebate', 'For Undergraduates', 'Find out more'),
-                             _bildName('Options', 'Flexible financing', 'Find out more'),
+                          _listname('Toyota Care', 'Roadside Assistent', 'Find out more'),
+                           _listname('Military Revbate', 'New Offer', 'Find out more'),
+                            _listname('Colege Grad Rebate', 'For Undergraduates', 'Find out more'),
+                             _listname('Options', 'Flexible financing', 'Find out more'),
                         ]))),
                     Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -70,34 +70,10 @@ class UpdateList extends StatefulWidget{
                     Container(
                       height: 65.0,
                       width: 60.0,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.grey,
-                            style: BorderStyle.solid,
-                            width: 1.0),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Center(
-                        child: Icon(Icons.search, color: Colors.black),
-                      ),
                     ),
                     Container(
                       height: 65.0,
-                      width: 60.0,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.grey,
-                            style: BorderStyle.solid,
-                            width: 1.0),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Center(
-                        child: Icon(Icons.shopping_basket, color: Colors.black),
-                      ),
-                    ),
-                    Container(
-                      height: 65.0,
-                      width: 120.0,
+                      width: 200.0,
                       decoration: BoxDecoration(
                           border: Border.all(
                               color: Colors.grey,
@@ -121,7 +97,7 @@ class UpdateList extends StatefulWidget{
       ),
     );
   }
-  Widget _bildName(String name, String foodName, String price) {
+  Widget _listname(String name, String subname, String smallname) {
     return Padding(
         padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           child: Row(
@@ -144,7 +120,7 @@ class UpdateList extends StatefulWidget{
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
                         Text(
-                          foodName,
+                          subname,
                           style: TextStyle(
                             fontFamily: 'Montserrat',
                             fontSize: 12.0,
@@ -152,7 +128,7 @@ class UpdateList extends StatefulWidget{
                           )
                         ),
                         Text(
-                          price,
+                          smallname,
                           style: TextStyle(
                             fontFamily: 'Montserrat',
                             fontSize: 10.0,
