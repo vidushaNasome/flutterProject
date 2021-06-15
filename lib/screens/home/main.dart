@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Contact.dart';
 import 'feedback_new.dart';
 import 'home.dart';
 
@@ -101,9 +102,12 @@ class Main extends StatelessWidget {
             height: 50.0,
             child:
             RaisedButton(
-              onPressed: () async
+              onPressed: ()
               {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContactPage()),
+                );
               },
               child: Text(
                   'FIND A DEALER'
