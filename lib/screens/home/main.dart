@@ -85,9 +85,11 @@ class Main extends StatelessWidget {
             height: 50.0,
             child:
             RaisedButton(
-              onPressed: () => {},
+               onPressed: (){
+                     Navigator.of(context).pushNamed('/list');
+                   },
               child: Text(
-                  'BUILD AND PRICE'
+                  'Our Services'
               ),
               color: Colors.black,
               textColor: Colors.white70,

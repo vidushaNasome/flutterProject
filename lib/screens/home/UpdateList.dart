@@ -28,14 +28,14 @@ class UpdateList extends StatefulWidget{
             padding: EdgeInsets.only(left: 40.0),
             child: Row(
               children: <Widget>[
-                Text('Find a',
+                Text('Services and',
                     style: TextStyle(
                         fontFamily: 'Montserrat',
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 25.0)),
                 SizedBox(width: 10.0),
-                Text('Dealer',
+                Text('Offers',
                     style: TextStyle(
                         fontFamily: 'Montserrat',
                         color: Colors.white,
@@ -59,10 +59,10 @@ class UpdateList extends StatefulWidget{
                     child: Container(
                         height: MediaQuery.of(context).size.height - 300.0,
                         child: ListView(children: [
-                          _bildName('Hansi', 'South Asia', 'hansi@gmail.com'),
-                           _bildName('Vidusha', 'Europe', 'vidusha@gmail.com'),
-                            _bildName('Bimsara', 'Affrica', 'bimsara@gmail.com'),
-                             _bildName('Oshani', 'North Korea', 'oshani@gmail.com'),
+                          _bildName('Toyota Care', 'Roadside Assistent', 'Find out more'),
+                           _bildName('Military Revbate', 'New Offer', 'Find out more'),
+                            _bildName('Colege Grad Rebate', 'For Undergraduates', 'Find out more'),
+                             _bildName('Options', 'Flexible financing', 'Find out more'),
                         ]))),
                     Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -128,14 +128,15 @@ class UpdateList extends StatefulWidget{
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Container(
-                child: Row(
+                child: Column(
                   children: [
                      Text(
                           name,
                           style: TextStyle(
                             fontFamily: 'Montserrat',
-                            fontSize: 17.0,
+                            fontSize: 15.0,
                             fontWeight: FontWeight.bold
+                            
                           )
                         ),
                     SizedBox(width: 10.0),
@@ -146,7 +147,7 @@ class UpdateList extends StatefulWidget{
                           foodName,
                           style: TextStyle(
                             fontFamily: 'Montserrat',
-                            fontSize: 17.0,
+                            fontSize: 12.0,
                             fontWeight: FontWeight.bold
                           )
                         ),
@@ -154,7 +155,7 @@ class UpdateList extends StatefulWidget{
                           price,
                           style: TextStyle(
                             fontFamily: 'Montserrat',
-                            fontSize: 15.0,
+                            fontSize: 10.0,
                             color: Colors.grey
                           )
                         )
