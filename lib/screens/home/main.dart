@@ -89,7 +89,7 @@ class Main extends StatelessWidget {
                      Navigator.of(context).pushNamed('/list');
                    },
               child: Text(
-                  'Our Services'
+                  'OUR SERVICES'
               ),
               color: Colors.black,
               textColor: Colors.white70,
